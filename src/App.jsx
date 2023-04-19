@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Navigation } from "./components/navigation";
-import { Header } from "./components/header";
-import { Features } from "./components/features";
-import { About } from "./components/about";
-import { Testimonials } from "./components/testimonials";
 
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./components/login";
+import Home from "./components/home";
+import Register from "./components/register";
+import { Navigation } from "./components/navigation";
+
 import "./App.css";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -15,20 +16,17 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 const App = () => {
-  const [landingPageData, setLandingPageData] = useState({});
-  useEffect(() => {
-    setLandingPageData(JsonData);
-  }, []);
+
 
   return (
-    <div>
-      <Navigation />
-      <Header data={landingPageData.Header} />
-      <Features data={landingPageData.Features} />
-      <Testimonials data={landingPageData.Testimonials} />
-      <About data={landingPageData.About} />
-     
-    </div>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/register" element={<Register />} />
+        </Routes>
+      </Router>
+      
   );
 };
 

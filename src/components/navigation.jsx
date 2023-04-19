@@ -1,5 +1,11 @@
 import React from "react";
 import logo from "../images/logo.png"
+import { Link } from "react-router-dom";
+import {
+  auth,
+  registerWithEmailAndPassword,
+  logout,
+} from "../firebase";
 export const Navigation = (props) => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
@@ -16,7 +22,7 @@ export const Navigation = (props) => {
             </li>
             <li>
               <p className="navbar-brand page-scroll" href="#page-top">
-                AI FOR JUSTICE<span className="navbar-brand-text" style={{}}><br /><br/>Bringing Data into the Sri lankan Courtroom</span>
+                Ceylon LawMate<span className="navbar-brand-text" style={{}}><br /><br/>Bringing Data into the Sri lankan Courtroom</span>
               </p>
             </li>
 
@@ -38,9 +44,9 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href="#portfolio" className="page-scroll">
+              <Link to="/" className="page-scroll">
                Log in
-              </a>
+              </Link>
             </li>
             
             <li>
