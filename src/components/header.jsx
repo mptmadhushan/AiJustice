@@ -1,10 +1,20 @@
-import React from "react";
+import React ,{CSSProperties}from "react";
 import axios from 'axios';
+import BarLoader from "react-spinners/ClipLoader";
+import { Navigation } from "../components/navigation";
+
+import image from '../images/image.png'
 
 const options = ["facts of the case", "judicial reasoning"];
+const override= {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 export const Header = (props) => {
   const [selectedFile, setSelectedFile] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [selected, setSelected] = React.useState(options[0]);
   const [response, setResponse] = React.useState({
     "violationData": {
@@ -17,6 +27,7 @@ export const Header = (props) => {
 });
   const handleSubmit = async(event) => {
     event.preventDefault()
+    setIsLoading(false)
     const formData = new FormData();
     formData.append("file", selectedFile);
     try {
@@ -28,6 +39,7 @@ export const Header = (props) => {
       });
       console.log("🚀 ~ file: header.jsx:16 ~ handleSubmit ~ response:", resp)
       setResponse(resp)
+      setIsLoading(true)
     } catch(error) {
       console.log(error)
     }
@@ -36,18 +48,20 @@ export const Header = (props) => {
     setSelectedFile(event.target.files[0])
   }
   return (
-    <header id="header">
+    <div><Navigation />
+    <header id="header" style={{marginTop:'20vh'}}>
+         <img src={image} style={{ width: '100vw', objectFit: 'contain',height:'30vh' }} alt="" />{" "}
       <div className="intro">
         <div className="overlay">
           <div className="container">
             <div className="row">
-              <div className="col-md-12 intro-text">
+              <div className="col-md-12 ">
                 <h1 className="large-text">
-                  {props.data ? props.data.title : "Loading"}
+                Case Summarizing Support For A Better Decision To Get Started, Upload The Case File
                   <span></span>
                 </h1>
 
-                <p  style={{ textTransform: 'capitalize' }} className="small-text">{props.data ? props.data.paragraph : "Loading"}</p>
+                <p  style={{ textTransform: 'capitalize' }} className="small-text">To Get Started, Upload A Case File</p>
               <div className="col-md-2">
                 
                 <input type="file" onChange={handleFileSelect}/>
@@ -73,8 +87,11 @@ export const Header = (props) => {
               style={{marginBlock:'20px'}}
               onClick={handleSubmit}
             >
-              submit
-            </button></div>
+              submit 
+            </button>
+      <BarLoader loading={!isLoading} height={1} width={1} color="#36d7b7" />
+
+            </div>
                 {/* <a
                   href="#features"
                   style={{ textTransform: 'capitalize' }}
@@ -128,5 +145,6 @@ export const Header = (props) => {
         </div>
       </div>
     </header>
+    </div>
   );
 };

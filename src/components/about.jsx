@@ -1,5 +1,7 @@
 import React from "react";
 import image from '../images/image.png'
+import { Link } from "react-router-dom";
+
 export const About = (props) => {
   return (
     <div id="about">
@@ -17,22 +19,26 @@ export const About = (props) => {
                 of justice for the general public by allowing judges and lawyers to handle more cases with comparability
                 reduced effort and time</p>
             </div>
-          </div><div className="col-xs-12 col-md-5">
+          </div>
+          
+          <div className="col-xs-12 col-md-5">
             <div className="row" style={{ display: 'flex', justifyContent: 'center' }}>
+          <Link to="/support" className="page-scroll">
+            
               <div style={{ marginTop: '10px', width: '180px', textAlign: 'center' }} className="col-xs-3 col-md-4">
-                <p style={{ textAlign: 'center' }}>Decision Making Support</p>
-                <i className="fa fa-gavel"></i>
-
-              </div> <div style={{ marginTop: '10px', width: '180px', textAlign: 'center' }} className="col-xs-3 col-md-4">
                 <p style={{ textAlign: 'center' }}>Q and A <br />Support</p>
                 <i style={{ textAlign: 'center' }} className="fa fa-group"></i>
 
-              </div> <div style={{ marginTop: '10px', width: '180px', textAlign: 'center' }} className="col-xs-3 col-md-4">
+              </div> 
+              </Link>
+          <Link to="/Summarizing" className="page-scroll">
+
+              <div style={{ marginTop: '10px', width: '180px', textAlign: 'center' }} className="col-xs-3 col-md-4">
                 <p style={{ textAlign: 'center' }}>Content Summarizing Support</p>
                 <i className="fa fa-book"></i>
 
               </div>
-
+</Link>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ export const Navigation = (props) => {
           </ul>
           <ul className="nav navbar-nav navbar-right" style={{marginTop:'40px'}}>
             <li>
-              <a href="#features" className="page-scroll">
+              <a href="/home" className="page-scroll">
                 Home
               </a>
             </li>

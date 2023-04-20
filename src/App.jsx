@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/login";
 import Home from "./components/home";
 import {Testimonials} from "./components/testimonials";
+import {Header} from "./components/header";
 import Register from "./components/register";
 import { Navigation } from "./components/navigation";
 
@@ -17,6 +18,10 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 const App = () => {
+  const [landingPageData, setLandingPageData] = useState({});
+  useEffect(() => {
+    setLandingPageData(JsonData);
+  }, []);
 
 
   return (
@@ -26,7 +31,8 @@ const App = () => {
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/register" element={<Register />} />
-          <Route exact path="/qa" element={<Testimonials />} />
+          <Route exact path="/summarizing" element={<Header  data={landingPageData.Testimonials} />} />
+          <Route exact path="/support" element={<Testimonials  data={landingPageData.Testimonials} />} />
         </Routes>
       </Router>
       

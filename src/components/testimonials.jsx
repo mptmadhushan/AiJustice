@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import myGif from "../images/gif.gif";
 import axios from "axios";
+import BarLoader from "react-spinners/ClipLoader";
+import { Navigation } from "../components/navigation";
+
 export const Testimonials = (props) => {
   const [commentText, setCommentText] = useState("");
+  const [isLoading, setIsLoading] = React.useState(true);
+ 
   const [response, setResponse] = useState({
-    "answer": "answer",
-    "reference": "ref"
+    "answer": "-",
+    "reference": "-"
 });
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(false)
     console.log(commentText);
     axios
       .post(
@@ -24,44 +30,20 @@ export const Testimonials = (props) => {
           "🚀 ~ file: testimonials.jsx:15 ~ .then ~ response:",
           response
         );
-        
+        setIsLoading(true)
         setResponse(response.data);
       });
   };
 
-  return (
-    <div id="testimonials">
+  return (<div><Navigation />
+    <div id="testimonials" style={{marginTop:'20vh'}}>
       <div className="container-fluid">
         <div className="section-title text-center">
           {/* <h2>What our clients say</h2> */}
         </div>
-        <div className="row">
+          
           <div
-            className="col-md-5"
-            style={{
-              border: "solid #F6ECE8 1px",
-              height: "80vh",
-              marginLeft: "30px",
-            }}
-          >
-            {props.data
-              ? props.data.map((d, i) => (
-                  <div
-                    key={`${d.name}-${i}`}
-                    style={{ backgroundColor: `${d.img}` }}
-                  >
-                    <div className="testimonial">
-                      <div className="testimonial-content">
-                        <div className="testimonial-meta">{d.name} </div>
-                        <p>{d.text}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              : "loading"}
-          </div>
-          <div
-            className="col-md-6"
+            className="col-md-12"
             style={{
               border: "solid #F6ECE8 1px",
               height: "80vh",
@@ -71,7 +53,7 @@ export const Testimonials = (props) => {
             <textarea
               name="commentTextArea"
               type="text"
-              style={{width:'100%',height:'60%'}}
+              style={{width:'90vw',height:'60%'}}
               id="CommentsOrAdditionalInformation"
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
@@ -86,6 +68,8 @@ export const Testimonials = (props) => {
             >
               submit
             </button>
+      <BarLoader loading={!isLoading} height={1} width={1} color="#36d7b7" />
+
             {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
               <div className="testimonial">
                 <div className="testimonial-content">
@@ -126,7 +110,7 @@ export const Testimonials = (props) => {
               </div> */}
             {/* </div> */}
           {/* </div> */}
-        </div>
+      </div>
       </div>
     </div>
   );
