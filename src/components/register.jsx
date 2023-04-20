@@ -7,6 +7,7 @@ import {
   signInWithGoogle,
 } from "../firebase";
 import "../components/register.css";
+import image from '../images/image.png'
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -26,7 +27,8 @@ function Register() {
     // if (user) navigate('/home');;
   }, [user, loading]);
   return (
-    <div className="register">
+    <div className="">
+      <img src={image} style={{ width: '100vw', objectFit: 'contain' }} alt="" />{" "}
       <div className="register__container">
         <input
           type="text"

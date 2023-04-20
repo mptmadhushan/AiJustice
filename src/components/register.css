@@ -9,8 +9,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #dcdcdc;
+  /* background-color: #dcdcdc; */
   padding: 30px;
+  padding: 30px;
+  width: 30%;
+  margin-left: 40%;
+  margin-top: -1%;
 }
 .register__textBox {
   padding: 10px;

@@ -4,8 +4,8 @@ import axios from "axios";
 export const Testimonials = (props) => {
   const [commentText, setCommentText] = useState("");
   const [response, setResponse] = useState({
-    "answer": "everyone shall have the right to freedom of expression",
-    "reference": "International Covenant on Civil and Political Rights-11."
+    "answer": "answer",
+    "reference": "ref"
 });
 
   const handleOnSubmit = (event) => {
@@ -37,7 +37,7 @@ export const Testimonials = (props) => {
         </div>
         <div className="row">
           <div
-            className="col-md-3"
+            className="col-md-5"
             style={{
               border: "solid #F6ECE8 1px",
               height: "80vh",
@@ -61,7 +61,7 @@ export const Testimonials = (props) => {
               : "loading"}
           </div>
           <div
-            className="col-md-4"
+            className="col-md-6"
             style={{
               border: "solid #F6ECE8 1px",
               height: "80vh",
@@ -95,7 +95,7 @@ export const Testimonials = (props) => {
               </div>
             </div>}
           </div>
-          <div
+          {/* <div
             className="col-md-4"
             style={{
               border: "solid #F6ECE8 1px",
@@ -123,9 +123,9 @@ export const Testimonials = (props) => {
                     Pellentesque pretium
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
+              </div> */}
+            {/* </div> */}
+          {/* </div> */}
         </div>
       </div>
     </div>
