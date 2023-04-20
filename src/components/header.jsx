@@ -116,10 +116,10 @@ export const Header = (props) => {
             >
               share
             </button></div></div>
-                  <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData.Court}</div>
-                  <p style={{marginTop:'10px',color:'black'}}> DocumentShouldBring: {response?.violationData.DocumentShouldBring}</p>
-                  <p style={{marginTop:'10px',color:'black'}}> Lawyers: {response?.violationData.Lawyers}</p>
-                  <p style={{marginTop:'10px',color:'black'}}> Suggetion: {response?.violationData.Suggetion}</p>
+                  <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData?.Court}</div>
+                  <p style={{marginTop:'10px',color:'black'}}> DocumentShouldBring: {response?.violationData?.DocumentShouldBring}</p>
+                  <p style={{marginTop:'10px',color:'black'}}> Lawyers: {response?.violationData?.Lawyers}</p>
+                  <p style={{marginTop:'10px',color:'black'}}> Suggetion: {response?.violationData?.Suggetion}</p>
                   <p style={{marginTop:'10px',color:'black'}}> violationType: {response?.violationType}</p>
                 </div>
               </div>
