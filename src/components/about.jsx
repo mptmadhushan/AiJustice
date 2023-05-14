@@ -1,48 +1,38 @@
-import React from "react";
-import image from '../images/image.png'
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  auth,
+  registerWithEmailAndPassword,
+  signInWithGoogle,
+} from "../firebase";
 
-export const About = (props) => {
+
+
+function About() {
+
   return (
-    <div id="about">
-      <div className="">
-        <div className="row">
-          <div className="col-xs-12 col-md-12">
-            {" "}
-            <img src={image} style={{ width: '100vw', objectFit: 'contain' }} alt="" />{" "}
-          </div>
-          <div className="col-xs-12 col-md-7" style={{ paddingInline: '5vw' }}>
+    <div className="main-body h-screen overflow-hidden">
+        <div className="body-container h-screen  text-center relative object-fill" >
+        
+            <div className="reset_container absolute space-y-10 top-1/2 left-1/2  -translate-y-1/2 -translate-x-1/2 flex flex-col p-20 w-1/2  rounded-lg" >
             <div>
-              <h2>Intelligent Support Services</h2>
-              <p style={{color:'#BBBBBB'}}>In Which Intelligent Support Services Are We provide?</p>
-              <p style={{fontWeight:'initial'}}>Bringing Al to the courtroom in order to make Sri Lanka a more just nation by increasing the availability
-                of justice for the general public by allowing judges and lawyers to handle more cases with comparability
-                reduced effort and time</p>
+            <h2 className="capitalize text-[#564740] text-[18pt]">About</h2>
+            <p>Bringing data into the Sri Lankan courtroom.</p>
             </div>
-          </div>
-          
-          <div className="col-xs-12 col-md-5">
-            <div className="row" style={{ display: 'flex', justifyContent: 'center' }}>
-          <Link to="/support" className="page-scroll">
+              
+              <p className="text-[#c7ae9b] text-[12pt]">The amount of data that is being recorded across all sectors and domains has been growing, and this tendency is likely to continue. While several sectors already make use of this data to advance their respective professions, the legal sector has even greater potential to benefit from it, specifically for jurisdictional purposes.  </p>
+
+              <p className="text-[#c7ae9b] text-[12pt]">The purpose of this study is to improve the administration of justice in Sri Lanka by providing assistance to key stakeholders in the field through the utilization of data pertaining to the country's various jurisdictions and legal systems. 
+</p>
+                
+
+
+            </div>
+
             
-              <div style={{ marginTop: '10px', width: '180px', textAlign: 'center' }} className="col-xs-3 col-md-4">
-                <p style={{ textAlign: 'center' }}>Q and A <br />Support</p>
-                <i style={{ textAlign: 'center' }} className="fa fa-group"></i>
 
-              </div> 
-              </Link>
-          <Link to="/Summarizing" className="page-scroll">
-
-              <div style={{ marginTop: '10px', width: '180px', textAlign: 'center' }} className="col-xs-3 col-md-4">
-                <p style={{ textAlign: 'center' }}>Content Summarizing Support</p>
-                <i className="fa fa-book"></i>
-
-              </div>
-</Link>
-            </div>
-          </div>
         </div>
-      </div>
-    </div >
+      
+    </div>
   );
-};
+}
+export default About;

@@ -6,8 +6,8 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "../firebase";
-import "../components/register.css";
-import image from '../images/image.png'
+// import "../components/register.css";
+import bg from '../images/bg.jpg'
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -26,44 +26,60 @@ function Register() {
     if (loading) return;
     // if (user) navigate('/home');;
   }, [user, loading]);
+
+
   return (
-    <div className="">
-      <img src={image} style={{ width: '100vw', objectFit: 'contain' }} alt="" />{" "}
-      <div className="register__container">
-        <input
-          type="text"
-          className="register__textBox"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
-        />
-        <input
-          type="text"
-          className="register__textBox"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className="register__textBox"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button className="register__btn" onClick={register}>
-          Register
-        </button>
-        <button
-          className="register__btn register__google"
-          onClick={signInWithGoogle}
-        >
-          Register with Google
-        </button>
-        <div>
-          Already have an account? <Link to="/">Login</Link> now.
+    <div className="main-body h-screen ">
+        <div className="body-container h-screen  text-center relative object-fill" >
+          <img src={bg}  alt="" className="w-full h-full object-cover"/>{" "}
+
+
+
+            <div className="register__container absolute bg-opacity-30 border backdrop-blur-sm bg-white top-1/2 left-1/2  -translate-y-1/2 -translate-x-1/2 flex flex-col p-20 w-[500px] space-y-4 rounded-lg" >
+
+              
+              <input
+                type="text"
+                className="register__textBox p-5 leading-5 rounded-lg"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full Name"
+              />
+              <input
+                type="text"
+                className="register__textBox p-5 rounded-lg"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-mail Address"
+              />
+              <input
+                type="password"
+                className="register__textBox p-5 rounded-lg"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+
+
+              <button
+                className="register__btn p-5 bg-gradient-to-r from-[#564740] to-[#887161] rounded-lg text-white text-2xl uppercase font-semibold" 
+                onClick={register}
+              >
+                Register
+              </button>
+              <button className="register__btn login__google p-5 bg-blue-500 hover:bg-blue-600 rounded-lg text-white text-2xl  " onClick={signInWithGoogle}>
+                Register with Google
+              </button>
+              
+              <div className="text-white">
+              Already have an account?<Link to="/" className="text-blue-500"> Login</Link> now.
+              </div>
+
+
+            </div>
+
         </div>
-      </div>
+      
     </div>
   );
 }
