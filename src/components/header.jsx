@@ -106,21 +106,21 @@ export const Header = (props) => {
                 <BarLoader loading={!isLoading} height={1} width={1} color="#36d7b7" />
           
               
-                {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
+                {/* {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
                       <div className="testimonial">
-                          <div className="testimonial-content">
+                          <div className="testimonial-content"> */}
                               
 
 
-                <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData?.Court}</div>
+                {/* <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData?.Court}</div>
                   <p style={{marginTop:'10px',color:'black'}}> DocumentShouldBring: {response?.violationData?.DocumentShouldBring}</p>
                   <p style={{marginTop:'10px',color:'black'}}> Lawyers: {response?.violationData?.Lawyers}</p>
                   <p style={{marginTop:'10px',color:'black'}}> Suggetion: {response?.violationData?.Suggetion}</p>
                   <p style={{marginTop:'10px',color:'black'}}> violationType: {response?.violationType}</p>
-                </div>
+                </div> */}
 
 
-                <div className="flex mt-[20px] lg:w-[50%] mx-auto">
+                {/* <div className="flex mt-[20px] lg:w-[50%] mx-auto">
                                  
                                       <button
                                             type="submit"
@@ -152,10 +152,10 @@ export const Header = (props) => {
                                                 share
                                               </button>
                                   
-                              </div>
+                </div> */}
 
-              </div>
-            </div>}
+              {/* </div>
+            </div>} */}
 
 
         </div>
