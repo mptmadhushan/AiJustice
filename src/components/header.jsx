@@ -47,104 +47,123 @@ export const Header = (props) => {
   const handleFileSelect = (event) => {
     setSelectedFile(event.target.files[0])
   }
+
+
+
+
   return (
-    <div><Navigation />
-    <header id="header" style={{marginTop:'20vh'}}>
-         <img src={image} style={{ width: '100vw', objectFit: 'contain',height:'30vh' }} alt="" />{" "}
-      <div className="intro">
-        <div className="overlay">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12 ">
-                <h1 className="large-text">
-                Case Summarizing Support For A Better Decision To Get Started, Upload The Case File
-                  <span></span>
-                </h1>
-
-                <p  style={{ textTransform: 'capitalize' }} className="small-text">To Get Started, Upload A Case File</p>
-              <div className="col-md-2">
-                
-                <input type="file" onChange={handleFileSelect}/>
-                </div><div className="col-md-2">
-                
-                <select  value={selected} 
-       onChange={e => setSelected(e.target.value)}>
-        {options.map((value) => (
-          <option value={value} key={value}>
-            {value}
-          </option>
-        ))}
-      </select>
-      
-                </div>
-             
-                <div className="col-md-12">
-      <button
-              type="submit"
-              form="myForm"
-              className="btn btn-custom btn-lg page-scroll"
-              alt="submit Checkout"
-              style={{marginBlock:'20px'}}
-              onClick={handleSubmit}
-            >
-              submit 
-            </button>
-      <BarLoader loading={!isLoading} height={1} width={1} color="#36d7b7" />
-
+    <div className="main-body h-screen ">
+      <div className="body-container h-screen  text-center relative object-fill" >
+        
+        <div className="summery__container absolute bg-opacity-30 backdrop-blur-sm bg-white top-1/2 left-1/2  -translate-y-1/2 -translate-x-1/2 flex flex-col p-20 w-3/4 space-y-5 rounded-lg" >
+              
+            <div className="mb-10">
+              <h1 className="text-6xl text-[#564740] font-normal ">              
+                Case Summarizing Support For A Better Decision 
+                <span></span>
+              </h1>
+              {/* <p className="text-3xl mt-5">To Get Started, Upload A Case File</p> */}
             </div>
-                {/* <a
-                  href="#features"
-                  style={{ textTransform: 'capitalize' }}
-                  className="btn btn-custom btn-lg page-scroll"
-                >
-                  Build a graph and predict the decision
-                </a>{" "} */}
+
+          <div className="columns-3 mx-auto justify-between  mt-5 mb-10 flex  items-center text-center  w-full">
+              
+              
+              <div className="flex items-center justify-center mt-5">
+                <input type="file" onChange={handleFileSelect} className="bg-gray-200 px-4 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500" />
               </div>
-            </div>
-            {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
-              <div className="testimonial">
-                <div className="testimonial-content">
-                  <div>
-                <div className="col-md-3">
-      <button
-              type="submit"
-              form="myForm"
-              className="btn btn-custom btn-lg page-scroll"
-              alt="submit Checkout"
-              onClick={handleSubmit}
-            >
-              save
-            </button></div> <div className="col-md-3">
-      <button
-              type="submit"
-              form="myForm"
-              className="btn btn-custom btn-lg page-scroll"
-              alt="submit Checkout"
-              onClick={handleSubmit}
-            >
-              print
-            </button></div> <div className="col-md-6">
-      <button
-              type="submit"
-              form="myForm"
-              className="btn btn-custom btn-lg page-scroll"
-              alt="submit Checkout"
-              onClick={handleSubmit}
-            >
-              share
-            </button></div></div>
-                  <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData?.Court}</div>
+
+              <div className="flex items-center justify-center mt-5">
+                <select value={selected} onChange={e => setSelected(e.target.value)} className="bg-gray-200 px-4 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500">
+                  {options.map((value) => (
+                    <option value={value} key={value}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              
+
+                <div>
+                  <button
+                    type="submit"
+                    form="myForm"
+                    className="btn w-[120px] text-center mx-auto rounded-full bg-gradient-to-r from-[#564740] to-[#887161] text-white p-3 text-[12pt] uppercase  cursor-pointer hover:text-white hover:from-blue-700 hover:to-blue-500 transition duration-500 delay-1000 ease-in-out ml-[20px]"
+                    alt="submit Checkout"
+                    
+                    onClick={handleSubmit}
+                  >
+                    submit 
+                  </button>
+                </div>
+
+                
+          </div>
+              
+             
+
+
+                <BarLoader loading={!isLoading} height={1} width={1} color="#36d7b7" />
+          
+              
+                {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
+                      <div className="testimonial">
+                          <div className="testimonial-content">
+                              
+
+                    <textarea/>
+
+                {/* <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData?.Court}</div>
                   <p style={{marginTop:'10px',color:'black'}}> DocumentShouldBring: {response?.violationData?.DocumentShouldBring}</p>
                   <p style={{marginTop:'10px',color:'black'}}> Lawyers: {response?.violationData?.Lawyers}</p>
                   <p style={{marginTop:'10px',color:'black'}}> Suggetion: {response?.violationData?.Suggetion}</p>
-                  <p style={{marginTop:'10px',color:'black'}}> violationType: {response?.violationType}</p>
+                  <p style={{marginTop:'10px',color:'black'}}> violationType: {response?.violationType}</p> */}
+                
+                
                 </div>
+
+
+                <div className="flex mt-[20px] lg:w-[50%] mx-auto">
+                                 
+                                      <button
+                                            type="submit"
+                                            form="myForm"
+                                            className="p-2 text-center mx-auto rounded-full bg-gradient-to-r from-[#564740] to-[#887161] text-white  text-[12pt] uppercase  cursor-pointer hover:text-white hover:from-blue-700 hover:to-blue-500 transition duration-500 delay-1000 ease-in-out w-[120px]"
+                                            alt="submit Checkout"
+                                            onClick={handleSubmit}
+                                          >
+                                            save
+                                          </button>
+                                  
+                                        <button
+                                                type="submit"
+                                                form="myForm"
+                                                className="p-2 text-center mx-auto rounded-full bg-gradient-to-r from-[#564740] to-[#887161] text-white text-[12pt] uppercase  cursor-pointer hover:text-white hover:from-blue-700 hover:to-blue-500 transition duration-500 delay-1000 ease-in-out w-[120px]"
+                                                alt="submit Checkout"
+                                                onClick={handleSubmit}
+                                              >
+                                                print
+                                              </button>
+                                 
+                                        <button
+                                                type="submit"
+                                                form="myForm"
+                                                className="p-2 text-center mx-auto rounded-full bg-gradient-to-r from-[#564740] to-[#887161] text-white  text-[12pt] uppercase  cursor-pointer hover:text-white hover:from-blue-700 hover:to-blue-500 transition duration-500 delay-1000 ease-in-out w-[120px]"
+                                                alt="submit Checkout"
+                                                onClick={handleSubmit}
+                                              >
+                                                share
+                                              </button>
+                                  
+                </div>
+
               </div>
             </div>}
-          </div>
+
+
         </div>
+              
       </div>
-    </header>
     </div>
   );
 };

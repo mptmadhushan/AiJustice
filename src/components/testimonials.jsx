@@ -35,43 +35,35 @@ export const Testimonials = (props) => {
       });
   };
 
-  return (<div><Navigation />
-    <div id="testimonials" style={{marginTop:'20vh'}}>
-      <div className="container-fluid">
-        <div className="section-title text-center">
-          {/* <h2>What our clients say</h2> */}
-        </div>
-          
-          <div
-            className="col-md-12"
-            style={{
-              border: "solid #F6ECE8 1px",
-              height: "80vh",
-              marginLeft: "30px",
-            }}
-          >
-            <textarea
+  return (
+  
+    <div className="main-body h-screen ">
+      <div className="body-container h-screen  text-center relative object-fill">
+          <div className="login__container absolute bg-opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col w-[90%] space-y-4 rounded-lg">
+            
+
+
+          <textarea
               name="commentTextArea"
               type="text"
-              style={{width:'90vw',height:'60%'}}
+              className="resize-none p-5 h-[300px] border border-black"
               id="CommentsOrAdditionalInformation"
+              placeholder="Type here.."
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
             />
-            <button
-              type="submit"
-              form="myForm"
-              className="btn btn-custom btn-lg page-scroll"
-              alt="submit Checkout"
-              style={{marginBlock:'20px'}}
-              onClick={handleOnSubmit}
-            >
+
+
+
+            <button type="submit" form="myForm" className=" w-2/12 rounded-full text-[14pt] text-white uppercase p-5 font-bold bg-gradient-to-r from-[#564740] to-[#887161]" alt="submit Checkout" onClick={handleOnSubmit}>
               submit
             </button>
+
+
       <BarLoader loading={!isLoading} height={1} width={1} color="#36d7b7" />
 
             {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
-              <div className="testimonial">
+              <div className="testimonial text-left">
                 <div className="testimonial-content">
                   <div className="testimonial-meta">Answer: {response?.answer}</div>
                   <p style={{marginTop:'10px'}}> Reference: {response?.reference}</p>
@@ -79,39 +71,9 @@ export const Testimonials = (props) => {
               </div>
             </div>}
           </div>
-          {/* <div
-            className="col-md-4"
-            style={{
-              border: "solid #F6ECE8 1px",
-              height: "80vh",
-              marginLeft: "30px",
-            }}
-          >
-            <img
-              src={myGif}
-              alt="my-gif"
-              style={{ height: "70%", width: "100%", objectFit: "cover" }}
-            />
-            <div>
-              <div
-                className="testimonial"
-                style={{ border: "solid #F6ECE8 1px" }}
-              >
-                <div className="testimonial-content">
-                  <div className="testimonial-meta">i- Prediction</div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent ac risus nisi. Duis al blandit eros. Pellentesque
-                    pretiumLorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Praesent ac risus nisi. Duis al blandit eros.
-                    Pellentesque pretium
-                  </p>
-                </div>
-              </div> */}
-            {/* </div> */}
-          {/* </div> */}
+
       </div>
       </div>
-    </div>
+    
   );
 };

@@ -162,17 +162,17 @@
   "Features": [
     {
       "icon": "fa fa-book",
-      "title": "Constitution of Sri Lanka",
+      "title": "Constitution of SL",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     },
     {
       "icon": "fa fa-lastfm",
-      "title": "Penal Code of Sri Lanka",
+      "title": "Penal Code of SL",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     },
     {
       "icon": "fa fa-calendar-o",
-      "title": "Acts",
+      "title": "Acts ",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     },
     {
