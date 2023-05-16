@@ -107,11 +107,13 @@ export const Header = (props) => {
           
               
                 {response&&<div style={{ backgroundColor: "#F6ECE8" }}>
-                      <div className="testimonial">
-                          <div className="testimonial-content">
+                      <div className="testimonial w-full">
+                          <div className="testimonial-content w-full">
                               
-
-                    <textarea/>
+                          <div className="w-full text">
+                          <textarea className="w-[80%] h-[300px] resize-none" />
+                          </div>
+                    
 
                 {/* <div className="testimonial-meta" style={{marginTop:'20px',color:'black'}}>Court: {response?.violationData?.Court}</div>
                   <p style={{marginTop:'10px',color:'black'}}> DocumentShouldBring: {response?.violationData?.DocumentShouldBring}</p>
